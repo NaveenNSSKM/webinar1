@@ -766,17 +766,26 @@ input[type="text"],
 input[type="email"],
 input[type="tel"] {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
   font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+}
+
+input::placeholder {
+  color: #aaa;
+  font-style: italic;
 }
 
 input:focus {
   outline: none;
-  border-color: #007BFF;
-  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+  border-bottom: 2px solid #342c19;
+  box-shadow: 0 1px 0 0 #342c19;
 }
+
 
 .checkbox {
   display: flex;
@@ -811,7 +820,10 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  outline: 1px solid black; /* optional */
 }
 
 /* Responsive */
@@ -922,19 +934,19 @@ button:hover {
       <form>
         <div class="form-group">
           <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          <input type="email" id="email" name="email"  required />
         </div>
         <div class="form-group">
           <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" placeholder="John Doe" required />
+          <input type="text" id="name" name="name"  required />
         </div>
         <div class="form-group">
           <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" placeholder="+1234567890" required />
+          <input type="tel" id="phone" name="phone"  required />
         </div>
         <div class="form-group">
           <label for="company">Company *</label>
-          <input type="text" id="company" name="company" placeholder="Tech Solutions Inc." required />
+          <input type="text" id="company" name="company"  required />
         </div>
         <div class="checkbox">
           <input type="checkbox" id="policy" required />
